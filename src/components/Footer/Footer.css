@@ -1,0 +1,9 @@
+.footer {
+  grid-area: f;
+  background-color: azure;
+}
+
+.footer img {
+  width: 50px;
+  
+}
