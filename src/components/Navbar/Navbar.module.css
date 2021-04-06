@@ -12,3 +12,8 @@
 .item a.active{
     color: #ff00e5;
 }
+
+.nav .friends {
+    color: green;
+    padding-top: 320px;
+}
