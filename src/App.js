@@ -4,9 +4,9 @@ import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 function App(props) {
@@ -14,18 +14,21 @@ function App(props) {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar state={props.store.getState().navBar}/>
+                <Navbar
+                    state={props.store.getState().navBar}
+                />
                 <Footer/>
                 <div className='app-wrapper-content'>
                     <Route path="/messages"
                            render={() => <DialogsContainer
-                               store={props.store}
-                               // state={props.store.getState().messagesPage}
-                               // dispatch={props.dispatch}
+                               //store={props.store}
                            />}/>
                     <Route path="/profile"
                            render={() => <Profile
-                               store={props.store} />}/>
+                               //store={props.store}
+                               />}/>
+                    <Route path="/users"
+                           render={() =><UsersContainer/>}/>
                 </div>
             </div>
         </BrowserRouter>
