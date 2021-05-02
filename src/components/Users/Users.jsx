@@ -1,52 +1,24 @@
-import styles from './Users.module.css';
+import userPhoto from "../../assets/images/user.png";
+import styles from "./Users.module.css";
+import React from "react";
+
 
 let Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers([
-                {
-                    id: 1,
-                    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Dante_Gabriel_Rossetti_-_Helen_of_Troy.jpg/250px-Dante_Gabriel_Rossetti_-_Helen_of_Troy.jpg',
-                    fullName: 'Helena',
-                    followed: true,
-                    status: 'I am a developer',
-                    location: {
-                        city: 'Helsinki',
-                        country: 'Finland'
-                    }
-                },
+    debugger
 
-                {
-                    id: 2,
-                    photoUrl: 'https://fs.kinomania.ru/file/person/5/f0/5f0ac0ef5b87491f2eca4de9bdc907d8.jpeg',
-                    fullName: 'John',
-                    followed: true,
-                    status: 'Hello!',
-                    location: {
-                        city: 'Los-Altos',
-                        country: 'USA'
-                    }
-                },
-
-                {
-                    id: 3,
-                    photoUrl: 'https://i.pinimg.com/564x/9d/47/d0/9d47d0b42f1db9af9383a076425b871a.jpg',
-                    fullName: 'Marinette',
-                    followed: false,
-                    status: 'I am a schoolgirl',
-                    location: {
-                        city: 'Paris',
-                        country: 'France'
-                    }
-                }
-            ]
-        )
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
     }
+
     return <div>
         {
             props.users.map(u => <div key={u.id}>
                 <span>
                      <div>
-                         <img src={u.photoUrl} className={styles.userPhoto}/>
+                         <img src={u.photos.small !== null ? u.photos.small : userPhoto} className={styles.userPhoto}
+                              alt=""/>
                      </div>
                      <div>
                          {u.followed
@@ -61,16 +33,24 @@ let Users = (props) => {
                 </span>
                 <span>
                     <span>
-                        <div>{u.fullName}</div>
+                        <div>{u.name}</div>
                         <div>{u.status}</div>
                     </span>
                     <span>
-                        <div>{u.location.country}</div>
-                        <div>{u.location.city}</div>
+                        <div>{'u.location.country'}</div>
+                        <div>{'u.location.city'}</div>
                     </span>
                 </span>
             </div>)
         }
+        <div>
+            {pages.map(p => {
+                return <span className={props.currentPage === p && styles.selectedPage}
+                             onClick={(e) => {
+                                 props.onPageChanged(p)
+                             }}> {p} </span>
+            })}
+        </div>
     </div>
 }
 
