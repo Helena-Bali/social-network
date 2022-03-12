@@ -1,5 +1,5 @@
 import {Redirect} from "react-router-dom";
-import Dialogs from "../components/Dialogs/Dialogs";
+// import Dialogs from "../components/Dialogs/Dialogs";
 import React from "react";
 import {connect} from "react-redux";
 

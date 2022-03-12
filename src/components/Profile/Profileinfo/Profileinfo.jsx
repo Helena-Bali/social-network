@@ -1,14 +1,15 @@
 import React from 'react'
 import classes from './ProfileInfo.module.css'
-import Preloader from "../../common/preloader/preloader";
-import ProfileStatus from './ProfileStatus'
+// import Preloader from "../../common/preloader/preloader";
+// import ProfileStatus from './ProfileStatus'
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
-        return <Preloader/>
+        return 'Log in, please'
+        //<Preloader/>
     }
 
     return (
