@@ -7,7 +7,7 @@ const Post = (props) => {
     <img src='https://bipbap.ru/wp-content/uploads/2020/04/Edinorog-risunki-dlya-srisovki-krasivye-prikolnye-i-interesnye-18.jpg' />
     {props.message}
     <div>
-      <span>Like</span> {props.counter}
+      <span> Like </span> {props.counter}
     </div>
   </div>
 
