@@ -5,16 +5,16 @@ let initialState = {
 
         {
             id: 1,
-            name: 'Саша'
+            name: 'Jim'
         },
 
         {
             id: 2,
-            name: 'Маша'
+            name: 'Rose'
         },
         {
             id: 3,
-            name: 'Вася'
+            name: 'Harry'
         },
         {
             id: 4,
@@ -24,16 +24,16 @@ let initialState = {
     messagesData: [
         {
             id: 1,
-            message: 'Пошли гулять!'
+            message: 'Let\'s go for a walk!'
         },
 
         {
             id: 2,
-            message: 'Привет!'
+            message: 'Hi!'
         },
         {
             id: 3,
-            message: 'Как дела?'
+            message: 'Hi! How\'s your day?'
         },
         {
             id: 4,

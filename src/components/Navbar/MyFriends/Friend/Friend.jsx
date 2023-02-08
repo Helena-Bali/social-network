@@ -1,9 +1,10 @@
 import React from 'react'
+import avatar from "../../../../assets/images/avatar.jpg"
 import classes from "../MyFriends.module.css";
 
 const Friend = (props) => {
     return <div className={classes.name}>
-        <img src='https://bipbap.ru/wp-content/uploads/2020/04/Edinorog-risunki-dlya-srisovki-krasivye-prikolnye-i-interesnye-18.jpg' />
+        <img src={avatar} />
         {props.friend}
     </div>
 

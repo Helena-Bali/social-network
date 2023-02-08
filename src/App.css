@@ -1,7 +1,8 @@
 .app-wrapper {
     margin: 0 auto;
     display: grid;
-    width: 1200px;
+    width: auto;
+    height: auto;
 
     grid-template-areas:
   "h h"
@@ -9,12 +10,12 @@
   "f f";
     grid-template-rows: 60px 1fr 100px;
     grid-template-columns: 2fr 10fr;
-    /* grid-gap: 10px; */
+    /*grid-gap: 10px; */
 }
 
 .app-wrapper-content {
   grid-area: c;
-  background-color: pink;
+  background-color: blanchedalmond;
 }
 
 

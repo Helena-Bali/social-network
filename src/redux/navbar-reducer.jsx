@@ -2,16 +2,16 @@ let initialState = {
     allFriends: [
         {
             id: 1,
-            friend: 'Авдотья'
+            friend: 'John'
         },
 
         {
             id: 2,
-            friend: 'Агафон'
+            friend: 'Helen'
         },
         {
             id: 3,
-            friend: 'Маша'
+            friend: 'Mary'
         }
     ]
 

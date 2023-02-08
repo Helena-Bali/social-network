@@ -8,13 +8,13 @@ let initialState = {
     postsData: [
         {
             id: 1,
-            message: 'Привет! Как дела?!',
+            message: 'Hi everyone!',
             likesCount: 25
         },
 
         {
             id: 2,
-            message: 'Это мой первый пост!',
+            message: 'It\'s my first post!',
             likesCount: 50
         }
     ],
