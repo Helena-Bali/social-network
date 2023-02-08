@@ -8,7 +8,7 @@ import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
-        return 'Log in, please'
+        return <div className={classes.loginStyle}>Log in, please</div>
         //<Preloader/>
     }
 
