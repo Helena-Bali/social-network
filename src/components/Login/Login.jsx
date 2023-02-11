@@ -6,7 +6,6 @@ import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import styles from './../common/FormsControls/FormsComtrols.module.css'
 
-
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
@@ -41,7 +40,6 @@ const Login = (props) => {
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
-
     return <div>
         <h1>LOGIN</h1>
         <LoginReduxForm onSubmit={onSubmit}/>

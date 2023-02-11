@@ -2,7 +2,6 @@ const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
     dialogsData: [
-
         {
             id: 1,
             name: 'Jim'
@@ -40,7 +39,6 @@ let initialState = {
             message: 'Hello! How are you?'
         }
     ]
-
 }
 
 const messagesReducer = (state = initialState, action) => {
@@ -62,7 +60,5 @@ export const sendMessageCreator = (newMessageBody) =>
         type: SEND_MESSAGE,
         newMessageBody
     })
-
-
 
 export default messagesReducer

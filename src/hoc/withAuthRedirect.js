@@ -1,5 +1,4 @@
 import {Redirect} from "react-router-dom";
-// import Dialogs from "../components/Dialogs/Dialogs";
 import React from "react";
 import {connect} from "react-redux";
 
@@ -7,17 +6,14 @@ let mapStateToPropsForRedirect = (state) => ({
     isAuth: state.auth.isAuth
 })
 
-export const withAuthRedirect = (Component)=> {
+export const withAuthRedirect = (Component) => {
     class RedirectComponent extends React.Component {
         render() {
-            if(!this.props.isAuth) return <Redirect to={"/Login"}/>
+            if (!this.props.isAuth) return <Redirect to={"/Login"}/>
             return <Component {...this.props}/>
         }
-
     }
 
-
-
-   let ConnectedAuthRedirectComponent = connect(mapStateToPropsForRedirect) (RedirectComponent)
+    let ConnectedAuthRedirectComponent = connect(mapStateToPropsForRedirect)(RedirectComponent)
     return ConnectedAuthRedirectComponent
 }

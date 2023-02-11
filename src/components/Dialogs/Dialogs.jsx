@@ -2,29 +2,25 @@ import React from 'react'
 import classes from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import { Redirect } from "react-router-dom"
+//import { Redirect } from "react-router-dom"
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 
 
 const Dialogs = (props) => {
-
     let state = props.messagesPage
 
     const dialogsElements = state.dialogsData
-        .map(it => <DialogItem name={it.name} id={it.id}/>)
+        .map(it => <DialogItem key={it.id} name={it.name} id={it.id}/>)
 
     const messagesElements = state.messagesData
-        .map(it => <Message message={it.message}/>)
-
+        .map(it => <Message key={it.id} message={it.message}/>)
 
     const addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody)
     }
-
    // if(!props.isAuth) return <Redirect to={"/Login"}/>
-
 
     return (
         <div className={classes.dialogs}>

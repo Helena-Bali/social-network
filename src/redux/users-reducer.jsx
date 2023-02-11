@@ -8,7 +8,6 @@ const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 const TOGGLE_FOLLOWING_IN_PROGRESS = 'TOGGLE_FOLLOWING_IN_PROGRESS'
 
-
 let initialState = {
     users: [],
     pageSize: 5,
@@ -16,7 +15,6 @@ let initialState = {
     currentPage: 1,
     isFetching: false,
     followingInProgress: []
-
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -91,6 +89,7 @@ export const setCurrentPageAC = (currentPage) =>
         type: SET_CURRENT_PAGE,
         currentPage
     })
+
 export const setTotalUsersCountAC = (totalUsersCount) =>
     ({
         type: SET_TOTAL_USERS_COUNT,
@@ -119,7 +118,6 @@ export const getUsersThunkCreator = (page, pageSize) => {
                 dispatch(setUsersAC(data.items));
                 dispatch(setTotalUsersCountAC(data.totalCount));
             })
-
         dispatch(setCurrentPageAC(page))
     }
 }
@@ -149,7 +147,5 @@ export const unfollow = (userId) => {
             });
     }
 }
-
-
 
 export default usersReducer

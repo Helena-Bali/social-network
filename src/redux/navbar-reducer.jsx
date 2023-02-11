@@ -14,7 +14,6 @@ let initialState = {
             friend: 'Mary'
         }
     ]
-
 }
 
 const navbarReducer = (state = initialState, action) => {

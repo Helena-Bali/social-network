@@ -19,7 +19,6 @@ import {
     getUsersSuper
 } from "../../redux/users-selectors";
 
-
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
@@ -45,17 +44,6 @@ class UsersContainer extends React.Component {
     }
 }
 
-// let mapStateToProps = (state) => {
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followingInProgress: state.usersPage.followingInProgress
-//     }
-// }
-
 let mapStateToProps = (state) => {
     return {
         //users: getUsers(state),
@@ -68,36 +56,14 @@ let mapStateToProps = (state) => {
     }
 }
 
-
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId))
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId))
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         },
-//         setTotalUsersCount: (totalCount) => {
-//             dispatch(setTotalUsersCountAC(totalCount))
-//         }
-//     }
-// }
-
-
 export default compose(
     connect(mapStateToProps, {
-    follow: follow,
-    unfollow: unfollow,
-    setCurrentPage: setCurrentPageAC,
-    toggleFollowingInProgress: toggleFollowingInProgressAC,
-    getUsers: getUsersThunkCreator
-})
+        follow: follow,
+        unfollow: unfollow,
+        setCurrentPage: setCurrentPageAC,
+        toggleFollowingInProgress: toggleFollowingInProgressAC,
+        getUsers: getUsersThunkCreator
+    })
 )
 (UsersContainer)
 

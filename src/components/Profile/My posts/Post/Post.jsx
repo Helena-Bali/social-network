@@ -4,15 +4,15 @@ import avatar from '../../../../assets/images/avatar2.png'
 import classes from './Post.module.css'
 
 const Post = (props) => {
-  return <div className={classes.item}>
-    <img src={avatar} />
-    {props.message}
-    <div>
-      <span> Like </span> {props.counter}
-    </div>
-  </div>
-
-
+    return (
+        <div className={classes.item}>
+            <img alt='avatar' src={avatar}/>
+            {props.message}
+            <div>
+                <span> Like </span> {props.counter}
+            </div>
+        </div>
+    )
 }
 
 export default Post

@@ -3,16 +3,11 @@ import {stopSubmit} from "redux-form"
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
-
-
-
-
 let initialState = {
     usersId: null,
     email: null,
     login: null,
     isAuth: false
-
 }
 
 const authReducer = (state = initialState, action) => {
@@ -22,8 +17,7 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload,
             }
-
-         default:
+        default:
             return state;
     }
 }
@@ -54,7 +48,7 @@ export const login = (email, password, rememberMe) => {
                     dispatch(getAuthUserData())
                 } else {
                     const message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error"
-                   dispatch(stopSubmit("login", {_error: message}))
+                    dispatch(stopSubmit("login", {_error: message}))
                 }
             });
     }
