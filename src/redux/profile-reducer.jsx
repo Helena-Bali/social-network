@@ -8,7 +8,7 @@ let initialState = {
     postsData: [
         {
             id: 1,
-            message: 'Hi everyone!',
+            message: 'Hi, everyone!',
             likesCount: 25
         },
 
